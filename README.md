@@ -1,3 +1,8 @@
 # HDL Implementation of RISC-V Processor Architecture
 
 This project presents the HDL implementation of a single-cycle RISC-V processor architecture using Verilog on Xilinx Vivado. The design models the core functionalities of the RISC-V instruction set architecture, leveraging the modularity and precision of Verilog to describe and interconnect fundamental processor components such as the ALU, Control Unit, Register File, Program Counter, and memory modules. The RISC-V architecture, with its open-source and reduced instruction set design, enables efficient execution of instructions and flexibility for customization. Implementing it in Verilog ensures a hardware-accurate representation that can be simulated, debugged, and synthesized for FPGA deployment. Xilinx Vivado serves as the development environment, providing integrated tools for behavioral simulation, waveform analysis, and synthesis, thereby bridging theoretical ISA knowledge with practical hardware realization while developing industry-relevant digital design skills.
+
+### Tools and Technologies
+---
+- Verilog HDL : Programming Language
+- Xilinx Vivado 2024.2 : Development Environment
