@@ -44,10 +44,9 @@ Write Back (WB): The computed result—whether from the ALU, memory, or PC+4—i
 ### RISC-V Pipeline Execution Results ------->
 ---
 
-### Overview
 This README documents the results of executing a small RISC-V program on a 5-stage pipeline processor. The focus is on verifying correct register updates through the `RD_W` (destination register) and `ResultW` (computed value) signals in the write-back stage.
 
-### Program executes the following instructions:
+Program executes the following instructions:
 The instructions are clearly visible in the InstrD of FETCH CYCLE GROUP
 
 ![DRC Report Screenshot](https://github.com/Khushi119/RISC_V_CORE_PROCESSOR_IMPLEMENTATION/blob/65b9a4d5ffb458f6e33da0bb6cc58e6355e44b98/Result_Image_2.png)
@@ -59,29 +58,23 @@ The instructions are clearly visible in the InstrD of FETCH CYCLE GROUP
 5. `ADD x7, x5, x6` – Compute x7 = x5 + x6
 6. `ADD x10, x8, x9` – Compute x10 = x8 + x9
 
-### Initial Register State:
-x5 = 5  
-x6 = 4  
-x7 = 3  
-x8 = 7  
-x9 = 2  
-All others = 1 (except x0 = 0)
+Initial Register State:
+x5 = 5 ; x6 = 4; x7 = 3; x8 = 7; x9 = 2; All others = 1 (except x0 = 0)
 
-### Expected Final Register State *(assuming data memory\[0] = 3)* :
-x6 = 3  
-x5 = 5  
-x8 = 3  
-x9 = 1  
-x7 = 8  
-x10 = 4
+Expected Final Register State *(assuming data memory\[0] = 3)* :
+x6 = 3  ; x5 = 5 ; x8 = 3; x9 = 1; x7 = 8; x10 = 4
 
 ### Verification in Simulation ------->
 
 In the waveform or simulation output:
-
 * **`RD_W`** displays the destination register number for the instruction in the write-back stage.
 * **`ResultW`** displays the final computed value to be written to that register.
 
 ![DRC Report Screenshot](https://github.com/Khushi119/RISC_V_CORE_PROCESSOR_IMPLEMENTATION/blob/65b9a4d5ffb458f6e33da0bb6cc58e6355e44b98/Result%20_Image_3.png)
 
 Monitoring these signals confirms correct execution and register file updates.
+
+### Conclusion ------->
+
+This project implements a RISC-V pipelined processor capable of executing instructions across multiple stages for improved throughput. The design successfully achieves correct instruction execution with higher efficiency compared to a single-cycle processor, and its modular architecture ensures clarity, scalability, and ease of debugging. While the current implementation meets the targeted functionality, further enhancements such as introducing data forwarding (bypassing) to reduce data hazards, implementing hazard detection and resolution techniques for control and structural hazards, and optimizing execution speed can make the pipeline hazard-free and elevate its performance to match real-world processor standards.
+
