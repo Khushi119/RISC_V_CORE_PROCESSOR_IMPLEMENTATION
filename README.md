@@ -40,3 +40,48 @@ Execute (EX): The ALU performs arithmetic, logical, or address calculations, whi
 Memory Access (MEM): Data memory is read or written depending on the instruction type, with the address taken from the ALU result. While this occurs, newer instructions are being executed and decoded in earlier pipeline stages.
 
 Write Back (WB): The computed result—whether from the ALU, memory, or PC+4—is written into the destination register. By this point, four other instructions are already somewhere in the pipeline, ensuring a continuous flow of operations.
+
+### RISC-V Pipeline Execution Results ------->
+---
+
+### Overview
+This README documents the results of executing a small RISC-V program on a 5-stage pipeline processor. The focus is on verifying correct register updates through the `RD_W` (destination register) and `ResultW` (computed value) signals in the write-back stage.
+
+### Program executes the following instructions:
+The instructions are clearly visible in the InstrD of FETCH CYCLE GROUP
+
+![DRC Report Screenshot](https://github.com/Khushi119/RISC_V_CORE_PROCESSOR_IMPLEMENTATION/blob/65b9a4d5ffb458f6e33da0bb6cc58e6355e44b98/Result_Image_2.png)
+
+1. `ADDI x6, x0, 3` – Set x6 = 3
+2. `ADDI x5, x0, 5` – Set x5 = 5
+3. `LW x8, 0(x0)` – Load x8 from data memory address 0
+4. `ADDI x9, x0, 1` – Set x9 = 1
+5. `ADD x7, x5, x6` – Compute x7 = x5 + x6
+6. `ADD x10, x8, x9` – Compute x10 = x8 + x9
+
+### Initial Register State:
+x5 = 5  
+x6 = 4  
+x7 = 3  
+x8 = 7  
+x9 = 2  
+All others = 1 (except x0 = 0)
+
+### Expected Final Register State *(assuming data memory\[0] = 3)* :
+x6 = 3  
+x5 = 5  
+x8 = 3  
+x9 = 1  
+x7 = 8  
+x10 = 4
+
+### Verification in Simulation ------->
+
+In the waveform or simulation output:
+
+* **`RD_W`** displays the destination register number for the instruction in the write-back stage.
+* **`ResultW`** displays the final computed value to be written to that register.
+
+![DRC Report Screenshot](https://github.com/Khushi119/RISC_V_CORE_PROCESSOR_IMPLEMENTATION/blob/65b9a4d5ffb458f6e33da0bb6cc58e6355e44b98/Result%20_Image_3.png)
+
+Monitoring these signals confirms correct execution and register file updates.
