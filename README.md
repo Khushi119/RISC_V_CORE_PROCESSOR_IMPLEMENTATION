@@ -19,7 +19,7 @@ RISC-V is an open-source Instruction Set Architecture (ISA) based on the Reduced
 
 ![DRC Report Screenshot](https://github.com/Khushi119/RISC_V_CORE_PROCESSOR_IMPLEMENTATION/blob/72441cddb5affdb8a1a7adf5151b524e265c39b1/RISC%20Pipelined%20Architecture.png)
 
-# RISC-V Processor Pipeline Stages
+### RISC-V Processor Pipeline Stages
 
 The RISC-V core processes each 32-bit fixed-length instruction through five fundamental stages—Instruction Fetch, Instruction Decode, Execute, Memory Access, and Write Back—arranged in a pipelined architecture. In pipelining, multiple instructions are processed simultaneously, with each stage handling a different instruction at any given clock cycle, significantly improving throughput compared to sequential execution.
 
