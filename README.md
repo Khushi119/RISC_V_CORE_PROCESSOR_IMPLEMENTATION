@@ -31,7 +31,11 @@ Instruction Decode (ID): The instruction is decoded and control signals are gene
 
 ![DRC Report Screenshot](https://github.com/Khushi119/RISC_V_CORE_PROCESSOR_IMPLEMENTATION/blob/ecb2b98b05815269ffbaaeccaf903692fe9ecefd/Fig%203_%20Main_Decoder_logic_table.png)
 
-Execute (EX): The ALU performs arithmetic, logical, or address calculations, while also computing potential branch targets. Multiplexers select between register and immediate operands. Other instructions simultaneously proceed through their decode and fetch stages.
+Execute (EX): The ALU performs arithmetic, logical, or address calculations, while also computing potential branch targets. Multiplexers select between register and immediate operands. Other instructions simultaneously proceed through their decode and fetch stages. Within the Execute stage, the ALU operation is determined by the ALU Decoder, which maps the instruction’s funct fields and control signals to specific arithmetic or logical operations as defined in the ALU Control Logic Table. 
+
+![DRC Report Screenshot](https://github.com/Khushi119/RISC_V_CORE_PROCESSOR_IMPLEMENTATION/blob/4e2d2c753f41a29c31eea63f879cc286296b844d/Fig%204_ALU_Logic_Table.png)
+
+![DRC Report Screenshot](https://github.com/Khushi119/RISC_V_CORE_PROCESSOR_IMPLEMENTATION/blob/4e2d2c753f41a29c31eea63f879cc286296b844d/Fig%205_ALU_Deocder_Logic_table.png)
 
 Memory Access (MEM): Data memory is read or written depending on the instruction type, with the address taken from the ALU result. While this occurs, newer instructions are being executed and decoded in earlier pipeline stages.
 
