@@ -19,17 +19,16 @@ RISC-V is an open-source Instruction Set Architecture (ISA) based on the Reduced
 
 ![DRC Report Screenshot](https://github.com/Khushi119/RISC_V_CORE_PROCESSOR_IMPLEMENTATION/blob/72441cddb5affdb8a1a7adf5151b524e265c39b1/RISC%20Pipelined%20Architecture.png)
 
-### RISC-V Processor Pipeline Stages
+# RISC-V Processor Pipeline Stages
 
-The RISC-V core processes each 32-bit fixed-length instruction through five fundamental stages—Instruction Fetch, Instruction Decode, Execute, Memory Access, and Write Back—arranged in a pipelined architecture. In pipelining, multiple instructions are processed simultaneously, with each stage handling a different instruction at any given clock cycle, significantly improving throughput compared to sequential execution.
+The RISC-V core processes each instruction through five fundamental stages—Instruction Fetch, Instruction Decode, Execute, Memory Access, and Write Back—arranged in a pipelined architecture. In pipelining, multiple instructions are processed simultaneously, with each stage handling a different instruction at any given clock cycle, significantly improving throughput compared to sequential execution.
 
-Instruction Fetch (IF): The Program Counter (PC) generates the address of the next 32-bit instruction, retrieved from Instruction Memory. The PC is updated either sequentially (PC+4) or with branch/jump targets, allowing the fetch stage to work ahead while previous instructions are still in later stages.
+Instruction Fetch (IF): The Program Counter (PC) generates the address of the next instruction, retrieved from Instruction Memory. The PC is updated either sequentially (PC+4) or with branch/jump targets, allowing the fetch stage to work ahead while previous instructions are still in later stages.
 
-Instruction Decode (ID): The 32-bit instruction is decoded and control signals are generated. Operand values are read from the Register File, and immediate values are sign-extended. As this happens, the fetch stage already retrieves the next instruction in parallel.
+Instruction Decode (ID): The instruction is decoded and control signals are generated. Operand values are read from the Register File, and immediate values are sign-extended. As this happens, the fetch stage already retrieves the next instruction in parallel.
 
 Execute (EX): The ALU performs arithmetic, logical, or address calculations, while also computing potential branch targets. Multiplexers select between register and immediate operands. Other instructions simultaneously proceed through their decode and fetch stages.
 
 Memory Access (MEM): Data memory is read or written depending on the instruction type, with the address taken from the ALU result. While this occurs, newer instructions are being executed and decoded in earlier pipeline stages.
 
 Write Back (WB): The computed result—whether from the ALU, memory, or PC+4—is written into the destination register. By this point, four other instructions are already somewhere in the pipeline, ensuring a continuous flow of operations.
-
