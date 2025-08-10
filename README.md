@@ -9,6 +9,6 @@ This project presents the HDL implementation of a single-cycle RISC-V processor 
 
 ### Introduction
 ---
-# Verilog HDL
+### Verilog HDL
 
 Verilog is a Hardware Description Language (HDL) used to model, design, and verify digital circuits at various abstraction levels, from gate-level to register-transfer level (RTL). Unlike software languages that give instructions to a processor, Verilog describes the processor itself — defining how data moves between registers, how logic operates, and how timing is controlled. It is inherently parallel, matching the nature of hardware, where multiple operations occur simultaneously. Its syntax, inspired by C, makes it approachable while still capable of expressing low-level structural details. Verilog enables behavioral modeling for functional simulation, structural modeling for gate connections, and RTL modeling for practical hardware synthesis. It forms the bridge between a conceptual design and a physically implementable circuit, as synthesis tools like Xilinx Vivado can convert it directly into an FPGA or ASIC layout. Mastery of Verilog equips an engineer to not just write code, but to design hardware architectures, optimize performance, and control physical behavior at the clock-cycle level — skills at the heart of chip design and processor development.
