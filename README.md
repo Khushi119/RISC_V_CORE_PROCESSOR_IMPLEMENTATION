@@ -2,13 +2,17 @@
 
 This project presents the HDL implementation of a single-cycle RISC-V processor architecture using Verilog on Xilinx Vivado. The design models the core functionalities of the RISC-V instruction set architecture, leveraging the modularity and precision of Verilog to describe and interconnect fundamental processor components such as the ALU, Control Unit, Register File, Program Counter, and memory modules. The RISC-V architecture, with its open-source and reduced instruction set design, enables efficient execution of instructions and flexibility for customization. Implementing it in Verilog ensures a hardware-accurate representation that can be simulated, debugged, and synthesized for FPGA deployment. Xilinx Vivado serves as the development environment, providing integrated tools for behavioral simulation, waveform analysis, and synthesis, thereby bridging theoretical ISA knowledge with practical hardware realization while developing industry-relevant digital design skills.
 
-### Tools and Technologies
+### Tools and Technologies ------->
 ---
 - Verilog HDL : Programming Language
 - Xilinx Vivado 2024.2 : Development Environment
 
-### Introduction
+### Introduction ------->
 ---
 ### Verilog HDL
 
 Verilog is a Hardware Description Language (HDL) used to model, design, and verify digital circuits at various abstraction levels, from gate-level to register-transfer level (RTL). Unlike software languages that give instructions to a processor, Verilog describes the processor itself — defining how data moves between registers, how logic operates, and how timing is controlled. It is inherently parallel, matching the nature of hardware, where multiple operations occur simultaneously. Its syntax, inspired by C, makes it approachable while still capable of expressing low-level structural details. Verilog enables behavioral modeling for functional simulation, structural modeling for gate connections, and RTL modeling for practical hardware synthesis. It forms the bridge between a conceptual design and a physically implementable circuit, as synthesis tools like Xilinx Vivado can convert it directly into an FPGA or ASIC layout. Mastery of Verilog equips an engineer to not just write code, but to design hardware architectures, optimize performance, and control physical behavior at the clock-cycle level — skills at the heart of chip design and processor development.
+
+### RISC-V Processor Architecture
+
+RISC-V is an open-source Instruction Set Architecture (ISA) based on the Reduced Instruction Set Computer (RISC) philosophy, designed to be simple, modular, and extensible. Unlike proprietary ISAs, RISC-V is royalty-free, enabling anyone to design, modify, and implement processors without licensing restrictions. Its fixed-length, load/store instruction format simplifies decoding and hardware design, improving execution efficiency. The base integer set (RV32I, RV64I, etc.) can be extended with standardized modules for multiplication, floating-point, atomic operations, vector processing, or custom instructions. RISC-V follows a clean, orthogonal design where each instruction performs a single, well-defined task, allowing efficient pipelining and easier verification. Its open nature fosters innovation in academia, industry, and research, making it ideal for custom SoCs, embedded systems, and high-performance processors. By understanding and implementing RISC-V at the hardware level, an engineer gains direct insight into how an ISA translates into datapaths, control logic, and timing — the core of processor microarchitecture. This clarity and adaptability have made RISC-V one of the fastest-growing ISAs in modern computing.
