@@ -27,7 +27,9 @@ Instruction Fetch (IF): The Program Counter (PC) generates the address of the ne
 
 ![DRC Report Screenshot](https://github.com/Khushi119/RISC_V_CORE_PROCESSOR_IMPLEMENTATION/blob/096f1c03a2f11a99ebbb815b5ed62a8459440c6b/Fig%202_Instruction_set_architecture.png)
 
-Instruction Decode (ID): The instruction is decoded and control signals are generated. Operand values are read from the Register File, and immediate values are sign-extended. As this happens, the fetch stage already retrieves the next instruction in parallel.
+Instruction Decode (ID): The instruction is decoded and control signals are generated. Operand values are read from the Register File, and immediate values are sign-extended. As this happens, the fetch stage already retrieves the next instruction in parallel. The decoder interfaces with the Control Unit, which generates the necessary control signals by referencing the Main Decoder Logic Table, ensuring correct instruction execution flow in accordance with the RISC-V ISA.
+
+![DRC Report Screenshot](https://github.com/Khushi119/RISC_V_CORE_PROCESSOR_IMPLEMENTATION/blob/ecb2b98b05815269ffbaaeccaf903692fe9ecefd/Fig%203_%20Main_Decoder_logic_table.png)
 
 Execute (EX): The ALU performs arithmetic, logical, or address calculations, while also computing potential branch targets. Multiplexers select between register and immediate operands. Other instructions simultaneously proceed through their decode and fetch stages.
 
