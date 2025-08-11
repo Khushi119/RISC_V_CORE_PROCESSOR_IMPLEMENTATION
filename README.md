@@ -78,3 +78,13 @@ Monitoring these signals confirms correct execution and register file updates.
 ---
 This project implements a RISC-V pipelined processor capable of executing instructions across multiple stages for improved throughput. The design successfully achieves correct instruction execution with higher efficiency compared to a single-cycle processor, and its modular architecture ensures clarity, scalability, and ease of debugging. While the current implementation meets the targeted functionality, further enhancements such as introducing data forwarding (bypassing) to reduce data hazards, implementing hazard detection and resolution techniques for control and structural hazards, and optimizing execution speed can make the pipeline hazard-free and elevate its performance to match real-world processor standards.
 
+## Source Code
+The complete project code is available below:  
+- [All Modules](./All_Modules.v)  
+- [FETCH CYCLE CODE](./FETCH_CYCLE_CODE.v)  
+- [DECODE CYCLE CODE](./DECODE_CYCLE_CODE.v)  
+- [EXECUTE CYCLE CODE](./EXECUTE_CYCLE_CODE.v)
+- [MEMORY CYCLE CODE](./MEMORY_CYCLE_CODE.v)
+- [WRITE BACK CYCLE CODE](./WRITE_BACK_CYCLE_CODE.v)
+- [TOP MODULE CODE](./TOP_MODULE_CODE.v)
+- [TESTBENCH MODULE CODE](./TESTBENCH_MODULE_CODE.v)
